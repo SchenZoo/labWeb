@@ -1,16 +1,7 @@
-import * as Rxjs from 'rxjs';
+
 import { MyService } from './myservice.service';
 
 
-{/* <div class="media">
-                <a class="d-flex align-self-center" href="#">
-                      <img src="" alt="">
-                </a>
-                <div class="media-body">
-                    <h5>Media heading</h5>
-                    <p>Media text</p>
-                </div>
-            </div> */}
 let params = (new URL(document.location)).searchParams;
 let category = params.get("category");
 console.log(category);
@@ -47,7 +38,9 @@ films.then(
             p=document.createElement("p");
             p.innerHTML="Rating:  "+element.imdbRating;
             mediaBody.appendChild(p);
-
+            let div=document.createElement("div");
+            div.id="player";
+            container.appendChild(div);
         }
     )
 )
