@@ -7,8 +7,7 @@ document.body.appendChild(button);
 button.innerHTML="Click!";
 const ul = document.createElement("ul");
 document.body.appendChild(ul);
-const input = document.createElement("input");
-document.body.appendChild(input);
+const input = document.getElementById('search');
 
 
 Rxjs.Observable.fromEvent(button, "click")
