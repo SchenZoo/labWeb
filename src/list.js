@@ -1,28 +1,53 @@
 import * as Rxjs from 'rxjs';
-import {interval} from 'rxjs/observable/interval'
+import { MyService } from './myservice.service';
 
-const div = document.createElement("div");
-document.body.appendChild(div);
-const obs1 = Rxjs.Observable.create(generator => {
 
-	setInterval(() => {
-	const broj = parseInt(Math.random() * 6);
-    generator.next(broj)
-}, 1000);
-	
-})
-.subscribe(num => {
-	console.log(num);
-	div.innerHTML = num;
-});
+{/* <div class="media">
+                <a class="d-flex align-self-center" href="#">
+                      <img src="" alt="">
+                </a>
+                <div class="media-body">
+                    <h5>Media heading</h5>
+                    <p>Media text</p>
+                </div>
+            </div> */}
+let params = (new URL(document.location)).searchParams;
+let category = params.get("category");
+console.log(category);
+let container=document.getElementsByClassName("container")[0];
+let films=MyService.findFilmByCategory(category);
+films.then(
+    films=>films.forEach(
+        function(element)
+        {
+            let media=document.createElement('div');
+            media.className="media";
+            container.appendChild(media);
+            let a=document.createElement("a");
+            a.className="d-flex align-self-center";
+            a.href=`film.html?id=${element.imdbID}`;
+            media.appendChild(a);
+            let img=document.createElement("img");
+            img.src=element.Poster;
+            img.alt=element.Title;
+            a.appendChild(img);
 
-const button = document.createElement("button");
-document.body.appendChild(button);
-button.innerHTML="STOP";
-button.onclick= () => obs1.unsubscribe();
+            let mediaBody=document.createElement('div');
+            mediaBody.className="media-body";
+            let head=document.createElement("h5");
+            head.innerHTML=element.Title;
+            media.appendChild(mediaBody);
+            mediaBody.appendChild(head);
+            let p=document.createElement("p");
+            p.innerHTML="Actors:  "+element.Actors;
+            mediaBody.appendChild(p);
+            p=document.createElement("p");
+            p.innerHTML="Genre:  "+element.Genre;
+            mediaBody.appendChild(p);
+            p=document.createElement("p");
+            p.innerHTML="Rating:  "+element.imdbRating;
+            mediaBody.appendChild(p);
 
-interval(800)
-    .map( num => parseInt(Math.random()*10))
-    .take(4) // uzme samo 4 broja sa seed-a
-    .subscribe( num => console.log('from interval', num));
-
+        }
+    )
+)

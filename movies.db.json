@@ -3,7 +3,7 @@
     [
         {
             "Title":"The Hobbit: An Unexpected Journey",
-            "Genre":"Adventure, Family, Fantasy",
+            "Genre":["Adventure", "Family", "Fantasy"],
             "Year":"2012",
             "imdbID":"tt0903624",
             "Actors":"Ian McKellen, Martin Freeman, Richard Armitage, Ken Stott",
@@ -16,7 +16,7 @@
         },
         {
             "Title":"300: Rise of an Empire",
-            "Genre":"Adventure, Family, Fantasy",
+            "Genre":["Adventure", "Action"],
             "Year":"2014",
             "imdbID":"tt1253863",
             "Actors":"Sullivan Stapleton, Eva Green, Lena Headey, Hans Matheson",
@@ -29,7 +29,7 @@
         },
         {
             "Title":"An Education",
-            "Genre":"Drama",
+            "Genre":["Drama"],
             "Year":"2009",
             "imdbID":"tt1174732",
             "Actors":"Carey Mulligan, Olivia Williams, Alfred Molina, Cara Seymour",
@@ -42,7 +42,7 @@
         },
         {
             "Title":"An American Werewolf in London",
-            "Genre":"Comedy, Horror",
+            "Genre":["Comedy", "Horror"],
             "Year":"1981",
             "imdbID":"tt0082010",
             "Actors":"Joe Belcher, David Naughton, Griffin Dunne, David Schofield",
@@ -55,7 +55,7 @@
         },
         {
             "Title":"An Inconvenient Truth",
-            "Genre":"Documentary",
+            "Genre":["Documentary"],
             "Year":"2006",
             "imdbID":"tt0497116",
             "Actors":"Al Gore, Billy West",
@@ -68,7 +68,7 @@
         },
          {  
             "Title":"Harry Potter and the Sorcerer's Stone",
-            "Genre":"Adventure, Family, Fantasy",
+            "Genre":["Adventure", "Family", "Fantasy"],
             "Year":"2001",
             "imdbID":"tt0241527",
             "Actors":"Richard Harris, Maggie Smith, Robbie Coltrane, Saunders Triplets",
@@ -81,7 +81,7 @@
          },
          {  
             "Title":"Harry Potter and the Order of the Phoenix",
-            "Genre":"Adventure, Family, Fantasy",
+            "Genre":["Adventure", "Family", "Fantasy"],
             "Year":"2007",
             "imdbID":"tt0373889",
             "Actors":"Daniel Radcliffe, Harry Melling, Jason Boyd, Richard Macklin",
@@ -94,7 +94,7 @@
          },
          {  
             "Title":"Harry Potter and the Half-Blood Prince",
-            "Genre":"Adventure, Family, Fantasy",
+            "Genre":["Adventure", "Family", "Fantasy"],
             "Year":"2009",
             "imdbID":"tt0417741",
             "Actors":"Daniel Radcliffe, Michael Gambon, Dave Legeno, Elarica Johnson",
@@ -107,7 +107,7 @@
          },
          {  
             "Title":"Dirty Harry",
-            "Genre":"Action, Crime, Thriller",
+            "Genre":["Action", "Crime", "Thriller"],
             "Year":"1971",
             "imdbID":"tt0066999",
             "Actors":"Clint Eastwood, Harry Guardino, Reni Santoni, John Vernon",
@@ -120,7 +120,7 @@
          },
          {  
             "Title":"The Lord of the Rings: The Fellowship of the Ring",
-            "Genre":"Adventure, Drama, Fantasy",
+            "Genre":["Adventure", "Drama", "Fantasy"],
             "Year":"2001",
             "imdbID":"tt0120737",
             "Actors":"Alan Howard, Noel Appleby, Sean Astin, Sala Baker",
@@ -133,7 +133,7 @@
          },
          {  
             "Title":"The Lord of the Rings: The Return of the King",
-            "Genre":"Adventure, Drama, Fantasy",
+            "Genre":["Adventure", "Drama", "Fantasy"],
             "Year":"2003",
             "imdbID":"tt0167260",
             "Actors":"Noel Appleby, Ali Astin, Sean Astin, David Aston",
@@ -146,7 +146,7 @@
          },
          {  
             "Title":"The Lord of the Rings: The Two Towers",
-            "Genre":"Adventure, Drama, Fantasy",
+            "Genre":["Adventure", "Drama", "Fantasy"],
             "Year":"2002",
             "imdbID":"tt0167261",
             "Actors":"Bruce Allpress, Sean Astin, John Bach, Sala Baker",
@@ -159,7 +159,7 @@
          },
          {  
             "Title":"Uncle Sam",
-            "Genre":"Comedy, Horror",
+            "Genre":["Comedy", "Horror"],
             "Year":"1996",
             "imdbID":"tt0118025",
             "Actors":"William Smith, David 'Shark' Fralick, Christopher Ogden, Leslie Neale",
@@ -172,7 +172,7 @@
          },
          {  
             "Title":"Rambo",
-            "Genre":"Action, Thriller, War",
+            "Genre":["Action", "Thriller", "War"],
             "Year":"2008",
             "imdbID":"tt0462499",
             "Actors":"Sylvester Stallone, Julie Benz, Matthew Marsden, Graham McTavish",
@@ -185,7 +185,7 @@
          },
          {  
             "Title":"Rambo: First Blood Part II",
-            "Genre":"Action, Adventure, Thriller",
+            "Genre":["Action", "Adventure", "Thriller"],
             "Year":"1985",
             "imdbID":"tt0089880",
             "Actors":"Sylvester Stallone, Richard Crenna, Charles Napier, Steven Berkoff",
@@ -198,7 +198,7 @@
          },
          {  
             "Title":"Rambo III",
-            "Genre":"Action, Adventure, Thriller",
+            "Genre":["Action", "Adventure", "Thriller"],
             "Year":"1988",
             "imdbID":"tt0095956",
             "Actors":"Sylvester Stallone, Richard Crenna, Marc de Jonge, Kurtwood Smith",
@@ -211,7 +211,7 @@
          },
          {  
             "Title":"Crazy, Stupid, Love.",
-            "Genre":"Comedy, Drama, Romance",
+            "Genre":["Comedy", "Drama","Romance"],
             "Year":"2011",
             "imdbID":"tt1570728",
             "Actors":"Steve Carell, Ryan Gosling, Julianne Moore, Emma Stone",
@@ -224,7 +224,7 @@
          },
          {  
             "Title":"Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
-            "Genre":"Comedy, War",
+            "Genre":["Comedy", "War"],
             "Year":"1964",
             "imdbID":"tt0057012",
             "Actors":"Peter Sellers, George C. Scott, Sterling Hayden, Keenan Wynn",
@@ -237,7 +237,7 @@
          },
          {  
             "Title":"Love Actually",
-            "Genre":"Comedy, Drama, Romance",
+            "Genre":["Comedy", "Drama", "Romance"],
             "Year":"2003",
             "imdbID":"tt0314331",
             "Actors":"Bill Nighy, Gregor Fisher, Rory MacGregor, Colin Firth",
