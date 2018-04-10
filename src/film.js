@@ -1,4 +1,5 @@
 import { MyService } from "./myservice.service";
+import './index';
 
 
 let params = (new URL(document.location)).searchParams;

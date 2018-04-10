@@ -1,11 +1,6 @@
 import * as Rxjs from 'rxjs';
-import  {MyService} from './myservice.service';
+import { MyService } from './myservice.service';
 
-
-    function handleClick(input)
-    {
-        input.innerHTML="";
-    }
     function makeItemsForSearchList(el,films)
     {
         while (el.firstChild) {
@@ -16,50 +11,57 @@ import  {MyService} from './myservice.service';
             el.appendChild(makeSearchItem(film));
         });
     }
-
+    
     function makeSearchItem(film)
     {
-
-        let img = document.createElement("img");
-        img.src = film.Poster;
-        img.className ="img-responsive img-rounded";
-        img.style="max-height: 50px; max-width: 50px;";
-        let li=document.createElement('li');
-        let a =document.createElement("a");
-        a.href=`film.html?id=${film.imdbID}`;
-        li.appendChild(a);
-        let span = document.createElement("span");
-        span.innerHTML=film.Title;
-
-        li.className="dropdown-item text-primary clickable my-2";
-
-        a.appendChild(img);
-        a.appendChild(span);
-        return li;
+    
+    let img = document.createElement("img");
+    img.src = film.Poster;
+    img.className ="img-responsive img-rounded";
+    img.style="max-height: 50px; max-width: 50px;";
+    let li=document.createElement('li');
+    let a =document.createElement("a");
+    a.href=`film.html?id=${film.imdbID}`;
+    li.appendChild(a);
+    let span = document.createElement("span");
+    span.innerHTML=film.Title;
+    
+    li.className="dropdown-item text-primary clickable my-2";
+    
+    a.appendChild(img);
+    a.appendChild(span);
+    return li;
     }
-
     function makeSearchElement(parent){
-        let ulSearch=document.getElementById("suggestions");
-        let input=document.getElementById("searchInput");
+    let ulSearch=document.getElementById("suggestions");
+    let input=document.getElementById("searchInput");
 
-        Rxjs.Observable.fromEvent(input, "input")
-            .debounceTime(200)
-            .map(ev => ev.target.value)
-            .filter(text => {
-                if(text.length === 0)
-                {
-                    ulSearch.className = "dropdown-menu";
-                    ulSearch.innerHTML ="";
-                }
-                return text.length >0;
-            })
-            .switchMap( text=>MyService.findFilm(text))
-            .subscribe( searchItem => {
-                makeItemsForSearchList(ulSearch, searchItem);
-                searchItem.length !== 0 ? ulSearch.className="dropdown-menu show" : ulSearch.className="dropdown-menu";
-            });
-    }
+    Rxjs.Observable.fromEvent(input, "input")
+        .debounceTime(200)
+        .map(ev => ev.target.value)
+        .filter(text => {
+            if(text.length === 0)
+            {
+                ulSearch.className = "dropdown-menu";
+                ulSearch.innerHTML ="";
+            }
+            return text.length >0;
+        })
+        .switchMap( text=>MyService.findFilm(text))
+        .subscribe( searchItem => {
+            makeItemsForSearchList(ulSearch, searchItem);
+            searchItem.length !== 0 ? ulSearch.className="dropdown-menu show" : ulSearch.className="dropdown-menu";
+        });
+}
+
 makeSearchElement(document.getElementById('search'));
+let form=document.getElementsByTagName('form')[0];
+form.onsubmit=function()
+{
+    let input=document.getElementById('searchInput');
+    window.location.href=`/list.html?name=${input.value}`;
+    return false;
+}
 let films=MyService.getCategories();
 let category;
 let list=document.getElementById('forCat');
@@ -72,10 +74,12 @@ films.then(films=>films.forEach(film=>film.Genre.forEach(function(item)
     category.innerHTML=item;
     category.href=`list.html?category=${item}`;
     list.appendChild(category);
-    console.log(category);
-    console.log(item);
     arrayz.push(item);
 }
 })));
+
+
+
+
 
 

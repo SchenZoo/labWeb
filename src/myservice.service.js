@@ -18,9 +18,9 @@ export class MyService{
     }
     static findFilmByCategory(category)
     {
-        return fetch("http://localhost:3000/movies")
+        return Rxjs.Observable.fromPromise(fetch("http://localhost:3000/movies")
             .then(response=>response.json())
-            .then(films=>films.filter(film=>film.Genre.indexOf(category)!=-1));
+            .then(films=>films.filter(film=>film.Genre.indexOf(category)!=-1)));
     }
     static findFilmByID(id)
     {
