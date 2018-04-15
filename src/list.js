@@ -5,25 +5,27 @@ import { movieList } from './movieList';
 
 
 let sorting=sortByRating;
-let radios=document.getElementsByName('choice');
+let choices=document.getElementsByName('choice');
 let container=document.getElementsByClassName("container")[0];
-let radio1=radios[0];
-let radio2=radios[1];
-
-
+let ascending=false;
+let radio1=choices[0];
+let radio2=choices[1];
+let check=choices[2];
 let myList=new movieList();
 
-
+check.onchange=function()
+{
+    ascending=!ascending;
+    show();
+}
 radio1.onclick=function()
 {
     sorting=sortByRating;
-    console.log("radio1 clicked");
     show();
 }
 radio2.onclick=function()
 {
     sorting=sortByName;
-    console.log("radio2 clicked");
     show();
 }
 let params = (new URL(document.location)).searchParams;
@@ -51,28 +53,31 @@ function show()
 {
     while(divForList.firstChild)
     divForList.removeChild(divForList.firstChild);
-    console.log("iz Show-a");
-    console.log(sorting);
-    console.log(myList);
     myList.list.sort(sorting);
-    console.log(myList);
     myList.createList(divForList);
 }
 
 
 function sortByRating(a,b)
 {
-    return parseInt(b.rating)-parseInt(a.rating);
+    if(ascending)
+       return parseFloat(a.rating)-parseFloat(b.rating);
+    else return parseFloat(b.rating)-parseFloat(a.rating);
 }
 function sortByName(a,b)
 {
     let nameA = a.title.toUpperCase();
     let nameB = b.title.toUpperCase();
+    let retVal=0;
     if (nameA < nameB) {
-        return -1;
+        retVal=-1;
     }
     if (nameA > nameB) {
-        return 1;
+        retVal=1;
     }
-    return 0;
+    if(ascending){
+        retVal=-retVal;
+    }
+    
+    return retVal;
 }
