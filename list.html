@@ -17,7 +17,7 @@
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           Categories
                                         </a>
-                                        <div id='forCat' class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <div id='forCategories' class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         </div>
                                       </li>
                                       <label class="radio-inline"><input type="radio" name="choice" checked>Sort by rating</label>
@@ -26,20 +26,19 @@
                             </ul>
                         </div>
                 
-                    </nav>
-                    <div class="col-sm-12 text-center">
-                            <form >
-                                    <div class= "input-group">
-                                          <input id='searchInput' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                          <ul id='suggestions' class="dropdown-menu"></ul>
-                                    </div>
-                                 
-                            </form>
-                            </div>
+                </nav>
+                <div class="col-sm-12 text-center">
+                        <form id='searchForm' method="GET" action='list.html'>
+                                <div class= "input-group">
+                                <input id='searchInput' class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name='name'>
+                                <ul id='suggestions' class="dropdown-menu"></ul>
+                                </div>
+                        </form>
+                </div>
         </div>
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+        
         <script src="./dist/list.bundle.js"></script>
 
     </body>

@@ -1,42 +1,42 @@
 <html>
-  <head>
-    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
-<div class='container'>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Main Page</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Categories
-                        </a>
-                        <div id='forCat' class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        </div>
-                      </li>
-            </ul>
-        </div>
+    <head>
+            <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
 
-    </nav>
-    <div class="col-sm-12 text-center">
-    <form >
-            <div class= "input-group">
-              <form>
-                  <input id='searchInput' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <ul id='suggestions' class="dropdown-menu"></ul>
-              </form>
-            </div>
-         
-    </form>
-    </div>
-    </div>
-  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="./dist/main.bundle.js"></script>
- </body>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="index.html">Main Page</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                      
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Categories
+                                        </a>
+                                        <div id='forCategories' class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        </div>
+                                      </li>
+                            </ul>
+                        </div>
+                
+                </nav>
+                <div class="col-sm-12 text-center">
+                        <form id='searchForm' method="GET" action='list.html'>
+                                <div class= "input-group">
+                                <input id='searchInput' class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name='name'>
+                                <ul id='suggestions' class="dropdown-menu"></ul>
+                                </div>
+                        </form>
+                </div>
+        </div>
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="./dist/main.bundle.js"></script>
+    </body>
 </html>
