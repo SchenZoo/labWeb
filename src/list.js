@@ -13,32 +13,19 @@ let radio2=choices[1];
 let check=choices[2];
 let myList=new movieList();
 
-check.onchange=function()
-{
-    ascending=!ascending;
-    show();
-}
-radio1.onclick=function()
-{
-    sorting=sortByRating;
-    show();
-}
-radio2.onclick=function()
-{
-    sorting=sortByName;
-    show();
-}
 let params = (new URL(document.location)).searchParams;
 let category = params.get("category");
 let name=params.get("name");
-
+let films=null;
 if(category!==null)
-var films=MyService.findFilmByCategory(category);
+films=MyService.findFilmByCategory(category);
+
 if(name!==null)
-var films=MyService.findFilm(name);
+films=MyService.findFilm(name);
+
 let divForList=document.createElement('div');
 container.appendChild(divForList);
-
+if(films!=null)
 films.then(filmz=>
     {
         filmz.forEach((movie)=>
@@ -57,6 +44,21 @@ function show()
     myList.createList(divForList);
 }
 
+check.onchange=function()
+{
+    ascending=!ascending;
+    show();
+}
+radio1.onchange=function()
+{
+    sorting=sortByRating;
+    show();
+}
+radio2.onchange=function()
+{
+    sorting=sortByName;
+    show();
+}
 
 function sortByRating(a,b)
 {

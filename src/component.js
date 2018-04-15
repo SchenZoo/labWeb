@@ -7,6 +7,7 @@ import {movieList} from './movieList'
     let input=document.getElementById("searchInput");
     let myList=new movieList();
     let categoryList=[];
+    let showItems=5;
     Rxjs.Observable.fromEvent(input, "input")
         .debounceTime(200)
         .map(ev => ev.target.value)
@@ -20,11 +21,12 @@ import {movieList} from './movieList'
         })
         .switchMap( text=>Rxjs.Observable.fromPromise(MyService.findFilm(text)))
         .subscribe( movies => {
+            myList.clearList();
             myList.addMovies(movies);
             while (ulSearch.firstChild) {
                 ulSearch.removeChild(ulSearch.firstChild);
             }
-            myList.createSearchList(ulSearch);
+            myList.createSearchList(ulSearch,showItems);
             myList.list.length !== 0 ? ulSearch.className="dropdown-menu show" : ulSearch.className="dropdown-menu";
         });
 

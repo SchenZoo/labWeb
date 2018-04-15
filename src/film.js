@@ -6,8 +6,11 @@ import { Movie } from "./movie";
 let params = (new URL(document.location)).searchParams;
 let id = params.get("id");
 const  YTPlayer = require('yt-player');
+let player;
 let myMovie;
 let container=document.getElementsByClassName("container")[0];
+if(id!==null)
+{
 let film=MyService.findFilmByID(id);
 film.then(
     movie=>{
@@ -17,8 +20,9 @@ film.then(
             let play=document.createElement("div");
             play.id='player';
             container.appendChild(play);
-            const player=new YTPlayer("#player");
+            player=new YTPlayer("#player");
             player.load(myMovie.ytID);
         }
     );
+}
 

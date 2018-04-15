@@ -6,12 +6,20 @@ export class movieList
     {
         this.list=[];
     }
-    createSearchList(searchElement)
+    createSearchList(searchElement,count)
     {
-        this.list.forEach( film => 
+        if(count!==undefined)
+            createList(this.list.slice(0,count));
+        else
+            createList(this.list);
+
+        function createList(array)
         {
-            searchElement.appendChild(film.makeAsSearchItem());
-        });
+            array.forEach( (film)=> 
+            {
+                searchElement.appendChild(film.makeAsSearchItem());
+            });
+        }
     }
     createList(parent)
     {
